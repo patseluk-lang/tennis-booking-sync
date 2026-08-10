@@ -1,0 +1,6 @@
+@echo off
+REM Автозапуск синхронізації тенісних бронювань раз на 15 хвилин.
+REM Тека НЕ вказується тут — її задає планувальник у полі "Start in".
+REM Запуск через python.exe з .venv, щоб були доступні бібліотеки Google.
+REM Вивід (і помилки) дописуються в sync.log — там історія всіх запусків.
+".venv\Scripts\python.exe" sync.py --real --calendar-id "YOUR_CALENDAR_ID_HERE"

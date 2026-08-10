@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.idea/
+credentials.json
+token.json
+*.log
+*.png
+Завдання*.txt
+run_sync.bat
+*_ua.py
+credentials*
+token*
+Screenshot*
+*.log
+Util/

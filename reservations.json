@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-07-14",
+    "start": "18:00",
+    "end": "19:30",
+    "court": "Court 3",
+    "location": "Municipal Sports Centre, Kyiv"
+  },
+  {
+    "date": "2026-07-16",
+    "start": "07:00",
+    "end": "08:30",
+    "court": "Court 1",
+    "location": "Municipal Sports Centre, Kyiv"
+  },
+  {
+    "date": "2026-07-19",
+    "start": "20:00",
+    "end": "21:00",
+    "court": "Court 5 (indoor)",
+    "location": "Municipal Sports Centre, Kyiv"
+  }
+]
