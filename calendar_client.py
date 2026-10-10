@@ -19,9 +19,7 @@ from pathlib import Path
 SYNC_MARKER = "tennis-sync-v1"
 
 
-# ─────────────────────────────────────────────────────────────
 #  FAKE CALENDAR - for offline development and testing
-# ─────────────────────────────────────────────────────────────
 class FakeCalendar:
     def __init__(self, path="fake_calendar.json"):
         self.path = Path(__file__).parent / path
@@ -59,9 +57,7 @@ class FakeCalendar:
         self._write(events)
 
 
-# ─────────────────────────────────────────────────────────────
 #  REAL GOOGLE CALENDAR
-# ─────────────────────────────────────────────────────────────
 class GoogleCalendar:
     """
     Requires:  pip install google-api-python-client google-auth-oauthlib

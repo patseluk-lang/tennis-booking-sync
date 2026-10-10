@@ -67,25 +67,21 @@ CAL.write_text(json.dumps(raw, indent=2, ensure_ascii=False), encoding="utf-8")
 
 USER, PWD = "player", "tennis123"
 
-# -- 1 --------------------------------------------------------
 banner("SCENARIO 1. First run. Three reservations, empty calendar.")
 reservations({"Court 3", "Court 1", "Court 5 (indoor)"})
 sync.sync(cal, USER, PWD)
 print("   Calendar:"); show_calendar()
 
-# -- 2 --------------------------------------------------------
 banner("SCENARIO 2. Repeat run. Nothing has changed.")
 print("Expected: create 0, delete 0. This is the protection against duplicates.\n")
 sync.sync(cal, USER, PWD)
 print("   Calendar:"); show_calendar()
 
-# -- 3 --------------------------------------------------------
 banner("SCENARIO 3. Cancellation. Court 3 disappeared from the site.")
 reservations({"Court 1", "Court 5 (indoor)"})
 sync.sync(cal, USER, PWD)
 print("   Calendar:"); show_calendar()
 
-# -- 4 --------------------------------------------------------
 banner("SCENARIO 4. The site is down. The calendar MUST NOT be emptied.")
 STATE["mode"] = "down"
 code = sync.sync(cal, USER, PWD)
@@ -93,7 +89,6 @@ print(f"   Exit code: {code} (1 = stopped, nothing was touched)")
 print("   Calendar:"); show_calendar()
 STATE["mode"] = "ok"
 
-# -- 5 --------------------------------------------------------
 banner("SCENARIO 5. Session expired. The page loads, the table is gone.")
 STATE["mode"] = "logged_out"
 code = sync.sync(cal, USER, PWD)
@@ -101,7 +96,6 @@ print(f"   Exit code: {code}")
 print("   Calendar:"); show_calendar()
 STATE["mode"] = "ok"
 
-# -- 6 --------------------------------------------------------
 banner("SCENARIO 6. Genuine mass cancellation. The site returned zero rows.")
 print("Here the script SHOULD delete 2 events - the limit (5) is not exceeded.\n")
 reservations(set())
